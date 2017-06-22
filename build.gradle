@@ -5,6 +5,8 @@ plugins {
 
 apply plugin: 'groovy'
 apply plugin: 'idea'
+apply plugin: 'maven-publish'
+apply plugin: 'maven'
 
 
 repositories {
@@ -24,11 +26,31 @@ nebulaRelease {
 
 }
 
-
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            groupId 'devops-demo'
+            artifactId 'java-devops-demo'
+            version version
+            from components.java
+        }
+    }
+    repositories {
+        maven {
+            credentials {
+                username "${artifactory_user}"
+                password "${artifactory_password}"
+            }
+            url "${artifactory_contextUrl}/${artifactory_repo}"
+        }
+    }
+}
 
 task wrapper(type: Wrapper) {
     gradleVersion = '3.1'
 }
+
+tasks.release.finalizedBy tasks.publish
 
 test {
     ignoreFailures = true
