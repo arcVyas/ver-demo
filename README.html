@@ -1,0 +1,935 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>@font-face {
+  font-family: octicons-anchor;
+  src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 980px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+body .markdown-body {
+    padding: 45px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    word-wrap: break-word;
+}
+
+pre {
+    font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  color: #333;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background-color: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body input {
+  font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.markdown-body a {
+  color: #4078c0;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body hr:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+  font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+.markdown-body .select::-ms-expand {
+  opacity: 0;
+}
+
+.markdown-body .octicon {
+  font: normal normal normal 16px/1 octicons-anchor;
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.markdown-body .octicon-link:before {
+  content: '\f05c';
+}
+
+.markdown-body:before {
+  display: table;
+  content: "";
+}
+
+.markdown-body:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
+
+.markdown-body .anchor {
+  display: inline-block;
+  padding-right: 2px;
+  margin-left: -18px;
+}
+
+.markdown-body .anchor:focus {
+  outline: none;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 1em;
+  margin-bottom: 16px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.markdown-body h1 .octicon-link,
+.markdown-body h2 .octicon-link,
+.markdown-body h3 .octicon-link,
+.markdown-body h4 .octicon-link,
+.markdown-body h5 .octicon-link,
+.markdown-body h6 .octicon-link {
+  color: #000;
+  vertical-align: middle;
+  visibility: hidden;
+}
+
+.markdown-body h1:hover .anchor,
+.markdown-body h2:hover .anchor,
+.markdown-body h3:hover .anchor,
+.markdown-body h4:hover .anchor,
+.markdown-body h5:hover .anchor,
+.markdown-body h6:hover .anchor {
+  text-decoration: none;
+}
+
+.markdown-body h1:hover .anchor .octicon-link,
+.markdown-body h2:hover .anchor .octicon-link,
+.markdown-body h3:hover .anchor .octicon-link,
+.markdown-body h4:hover .anchor .octicon-link,
+.markdown-body h5:hover .anchor .octicon-link,
+.markdown-body h6:hover .anchor .octicon-link {
+  visibility: visible;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h1 .anchor {
+  line-height: 1;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 .anchor {
+  line-height: 1;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h3 .anchor {
+  line-height: 1.2;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h4 .anchor {
+  line-height: 1.2;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h5 .anchor {
+  line-height: 1.1;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body h6 .anchor {
+  line-height: 1.1;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  box-sizing: content-box;
+  background-color: #fff;
+}
+
+.markdown-body code {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .highlight {
+  margin-bottom: 16px;
+}
+
+.markdown-body .highlight pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .highlight pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.markdown-body .pl-c {
+  color: #969896;
+}
+
+.markdown-body .pl-c1,
+.markdown-body .pl-s .pl-v {
+  color: #0086b3;
+}
+
+.markdown-body .pl-e,
+.markdown-body .pl-en {
+  color: #795da3;
+}
+
+.markdown-body .pl-s .pl-s1,
+.markdown-body .pl-smi {
+  color: #333;
+}
+
+.markdown-body .pl-ent {
+  color: #63a35c;
+}
+
+.markdown-body .pl-k {
+  color: #a71d5d;
+}
+
+.markdown-body .pl-pds,
+.markdown-body .pl-s,
+.markdown-body .pl-s .pl-pse .pl-s1,
+.markdown-body .pl-sr,
+.markdown-body .pl-sr .pl-cce,
+.markdown-body .pl-sr .pl-sra,
+.markdown-body .pl-sr .pl-sre {
+  color: #183691;
+}
+
+.markdown-body .pl-v {
+  color: #ed6a43;
+}
+
+.markdown-body .pl-id {
+  color: #b52a1d;
+}
+
+.markdown-body .pl-ii {
+  background-color: #b52a1d;
+  color: #f8f8f8;
+}
+
+.markdown-body .pl-sr .pl-cce {
+  color: #63a35c;
+  font-weight: bold;
+}
+
+.markdown-body .pl-ml {
+  color: #693a17;
+}
+
+.markdown-body .pl-mh,
+.markdown-body .pl-mh .pl-en,
+.markdown-body .pl-ms {
+  color: #1d3e81;
+  font-weight: bold;
+}
+
+.markdown-body .pl-mq {
+  color: #008080;
+}
+
+.markdown-body .pl-mi {
+  color: #333;
+  font-style: italic;
+}
+
+.markdown-body .pl-mb {
+  color: #333;
+  font-weight: bold;
+}
+
+.markdown-body .pl-md {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.markdown-body .pl-mi1 {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.markdown-body .pl-mdr {
+  color: #795da3;
+  font-weight: bold;
+}
+
+.markdown-body .pl-mo {
+  color: #1d3e81;
+}
+
+.markdown-body kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb;
+}
+
+.markdown-body .plan-price-unit {
+  color: #767676;
+  font-weight: normal;
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 0.35em 0.25em -1.6em;
+  vertical-align: middle;
+}
+
+.markdown-body .plan-choice {
+  padding: 15px;
+  padding-left: 40px;
+  display: block;
+  border: 1px solid #e0e0e0;
+  position: relative;
+  font-weight: normal;
+  background-color: #fafafa;
+}
+
+.markdown-body .plan-choice.open {
+  background-color: #fff;
+}
+
+.markdown-body .plan-choice.open .plan-choice-seat-breakdown {
+  display: block;
+}
+
+.markdown-body .plan-choice-free {
+  border-radius: 3px 3px 0 0;
+}
+
+.markdown-body .plan-choice-paid {
+  border-radius: 0 0 3px 3px;
+  border-top: 0;
+  margin-bottom: 20px;
+}
+
+.markdown-body .plan-choice-radio {
+  position: absolute;
+  left: 15px;
+  top: 18px;
+}
+
+.markdown-body .plan-choice-exp {
+  color: #999;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.markdown-body .plan-choice-seat-breakdown {
+  margin-top: 10px;
+  display: none;
+}
+
+.markdown-body :checked+.radio-label {
+  z-index: 1;
+  position: relative;
+  border-color: #4078c0;
+}
+</style><title>README</title></head><body><article class="markdown-body"><h1>
+<a id="user-content-versioning-strategy" class="anchor" href="#versioning-strategy" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Versioning Strategy</h1>
+<p>Version Number Format: <strong>MAJOR.MINOR.PATCH</strong></p>
+<p>Given a version number MAJOR.MINOR.PATCH, increment the:</p>
+<ul>
+<li>MAJOR version when you make incompatible API changes,</li>
+<li>MINOR version when you add functionality in a backwards-compatible manner, and</li>
+<li>PATCH version when you make backwards-compatible bug fixes.</li>
+</ul>
+<p>Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.</p>
+<p><a href="http://semver.org/">Refer Semantic Versioning</a></p>
+<h2>
+<a id="user-content-git-flow-branching" class="anchor" href="#git-flow-branching" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Git-Flow Branching</h2>
+<ul>
+<li>master</li>
+<li>develop</li>
+<li>feature/*</li>
+<li>bugfix/*</li>
+<li>release/*</li>
+</ul>
+<p><a href="http://jeffkreeftmeijer.com/images/gitflow.gif">Refer GitFlow</a></p>
+<h2>
+<a id="user-content-versioning-tasks" class="anchor" href="#versioning-tasks" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Versioning Tasks</h2>
+<ul>
+<li>snapshot : Generates the snapshots</li>
+<li>candidate : Generates the release candidates</li>
+<li>final : Generates the final version</li>
+</ul>
+<h2>
+<a id="user-content-a-small-versioning-story" class="anchor" href="#a-small-versioning-story" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>A small versioning story</h2>
+<p>Once upon a time there was an app called ver-demo. The whole code just stayed in just one master branch and thats it.</p>
+<p><a href="https://camo.githubusercontent.com/670d904d7e1f6c04aa643fa87943d22c19223355/68747470733a2f2f7777772e6372797374616c6b6e6f77732e636f6d2f6173736574732f686f6d65322f6865616473686f74732f4a696d2d636161343466323238636464633433393032363433363339363063373462623039393634333832333161326463333935346238623964316461363062623038302e706e67" target="_blank"><img src="https://camo.githubusercontent.com/670d904d7e1f6c04aa643fa87943d22c19223355/68747470733a2f2f7777772e6372797374616c6b6e6f77732e636f6d2f6173736574732f686f6d65322f6865616473686f74732f4a696d2d636161343466323238636464633433393032363433363339363063373462623039393634333832333161326463333935346238623964316461363062623038302e706e67" alt="" title="Jim" data-canonical-src="https://www.crystalknows.com/assets/home2/headshots/Jim-caa44f228cddc4390264363960c74bb0996438231a2dc3954b8b9d1da60bb080.png" style="max-width:100%;"></a> Jim Halpert joins the team. Unlike others, he wants to do everything smart. He prints the <a href="http://jeffkreeftmeijer.com/images/gitflow.gif">git-flow diagram</a> and pin it on his desk. And the rest of the story follows..</p>
+<h3>
+<a id="user-content-sets-up" class="anchor" href="#sets-up" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Sets up</h3>
+<p>Day 1) First, he created <code>develop</code> branch from <code>master</code></p>
+<p><code>git checkout -b develop</code></p>
+<p>He didn't do anything that day, but simply plugged in the develop branch to daily build with generated snapshots.</p>
+<p><code>gradle clean build sonarqube snapshot publish</code></p>
+<p>This created version <code>0.1.0-SNAPSHOT</code>. (Remember: No tags are created on snapshots)</p>
+<p>artifact was generated - <code>ver-demo-0.1.0-SNAPSHOT.jar</code></p>
+<p>Jim knew every day, this would create artifacts under <code>0.1.0-SNAPSHOT</code> folder in the artifactory maven-snapshots repository as
+<code>name-version-YYYYMMDD.HHmmSS.#.jar</code></p>
+<pre><code>maven-snapshots
+    com/dunder-mifflin/hello
+        0.1.0-SNAPSHOT
+            ver-demo-0.1.0-20170622.154848-1.jar
+            ver-demo-0.1.0-20170622.154848-2.jar
+</code></pre>
+<h3>
+<a id="user-content-build-something" class="anchor" href="#build-something" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Build something</h3>
+<p>Day 2) <a href="https://camo.githubusercontent.com/c0a307576316347add0dbe2c4d0cb854ef44761e/68747470733a2f2f7777772e6372797374616c6b6e6f77732e636f6d2f6173736574732f686f6d65322f6865616473686f74732f4d69636861656c2d626439643530336431616261363063303233383138626561613566366237633237613464396661376633303063653232393161376635636161613339646336642e706e67" target="_blank"><img src="https://camo.githubusercontent.com/c0a307576316347add0dbe2c4d0cb854ef44761e/68747470733a2f2f7777772e6372797374616c6b6e6f77732e636f6d2f6173736574732f686f6d65322f6865616473686f74732f4d69636861656c2d626439643530336431616261363063303233383138626561613566366237633237613464396661376633303063653232393161376635636161613339646336642e706e67" alt="" title="Michael Scott" data-canonical-src="https://www.crystalknows.com/assets/home2/headshots/Michael-bd9d503d1aba60c023818beaa5f6b7c27a4d9fa7f300ce2291a7f5caaa39dc6d.png" style="max-width:100%;"></a> Michael asks him to build something instead of chatting at reception desk.</p>
+<p>Jim goes to his desk and creates feature branch (<code>feature/build-smthng</code>) from <code>develop</code></p>
+<p><code>git checkout -b feature/build-smthng</code></p>
+<p>He then runs <code>gradle clean build</code> and notice the version number it generated <code>0.1.0-dev.3-build.smthng.cafb6a9</code></p>
+<blockquote>
+<p>It told him 3 commits in develop from the last release and it had his branch name and last commit# too</p>
+</blockquote>
+<p>He changes <code>System.out.println("Hello.. Its Dunder Mifflin");</code> to <code>System.out.println("Hello.. Dwgiht is the worst!")</code> in Hello.java;</p>
+<p>He runs <code>gradle clean build</code> again and noticed the change in version number : <code>0.1.0-dev.3.uncommitted-build.smthng.cafb6a9</code></p>
+<p>When he ran the app, it printed "Hello.. Dwgiht is the worst!".</p>
+<p>Checked the code in  <code>git add. &amp;&amp; git commit -m "greatest" &amp;&amp; git push</code> and ran <code>gradle clean build</code> command again just for fun and saw the version number changed to <code>0.1.0-dev.4-build.smthng.d40eaf0</code></p>
+<blockquote>
+<p>4 commits in develop in this SNAPSHOT version; the last commit is Jim's</p>
+</blockquote>
+<p>It was time to merge his feature to develop. So he did..</p>
+<pre><code>git checkout develop
+git merge feature/build-smthng
+</code></pre>
+<p>... and left for the day.</p>
+<p>Daily build ran on develop and created a new SNAPSHOT version with Jim's changes</p>
+<pre><code>maven-snapshots
+    com/dunder-mifflin/hello
+        0.1.0-SNAPSHOT
+            ver-demo-0.1.0-20170622.154848-1.jar
+            ver-demo-0.1.0-20170622.154848-2.jar
+            ver-demo-0.1.0-20170622.160800-3.jar  &lt;== Jim's changes here
+</code></pre>
+<h3>
+<a id="user-content-ready-for-release-candidate" class="anchor" href="#ready-for-release-candidate" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ready for Release (Candidate)</h3>
+<p>Day 3) Jim wants to push his change to production. So he goes on and creates a release branch.</p>
+<p>Jim creates release branch (<code>release/0.x</code>)</p>
+<p><code>git checkout -b release/0.x</code></p>
+<p>He is still not sure if this is the final release version. So he creates a release-candidate (RC)</p>
+<p><code>gradle candidate publish</code></p>
+<p>This created version <code>0.1.0-rc.1</code></p>
+<pre><code>&lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;-rc.#
+[# is the number of release candidates for this version produced so far]
+</code></pre>
+<p>and jar got uploaded to maven-releases repo in artifactory (publish)</p>
+<pre><code>maven-releases
+    com/dunder-mifflin/hello
+        0.1.0-rc.1
+            ver-demo-0.1.0-rc.1.jar
+</code></pre>
+<hr>
+<p><a href="https://camo.githubusercontent.com/058e38bfae07efa1fb0c66f2ea0dbecc8e366c88/687474703a2f2f7364666f6f646d656e752e636f6d2f77702d636f6e74656e742f706c7567696e732f66756c6c2d73637265656e2d6d6f727068696e672d7365617263682f6173736574732f696d672f7461672e706e67" target="_blank"><img src="https://camo.githubusercontent.com/058e38bfae07efa1fb0c66f2ea0dbecc8e366c88/687474703a2f2f7364666f6f646d656e752e636f6d2f77702d636f6e74656e742f706c7567696e732f66756c6c2d73637265656e2d6d6f727068696e672d7365617263682f6173736574732f696d672f7461672e706e67" alt="" data-canonical-src="http://sdfoodmenu.com/wp-content/plugins/full-screen-morphing-search/assets/img/tag.png" style="max-width:100%;"></a> <strong>He notices that the git repository has now a tag created (<code>v0.1.0-rc.1</code>)</strong></p>
+<hr>
+<h3>
+<a id="user-content-oopsbugs" class="anchor" href="#oopsbugs" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Oops..Bugs</h3>
+<p>He is all set to push it to prod but wants to show to Pam once <a href="https://camo.githubusercontent.com/d08dc29b9db7549d6e829af67ecb555e7fd38ca9/68747470733a2f2f7777772e6372797374616c6b6e6f77732e636f6d2f6173736574732f686f6d65322f6865616473686f74732f50616d2d656135313833623133643734366435356461343165323638333233616337653563373863623462393934646464616237313530343363623266653563656463352e706e67" target="_blank"><img src="https://camo.githubusercontent.com/d08dc29b9db7549d6e829af67ecb555e7fd38ca9/68747470733a2f2f7777772e6372797374616c6b6e6f77732e636f6d2f6173736574732f686f6d65322f6865616473686f74732f50616d2d656135313833623133643734366435356461343165323638333233616337653563373863623462393934646464616237313530343363623266653563656463352e706e67" alt="" title="Pam" data-canonical-src="https://www.crystalknows.com/assets/home2/headshots/Pam-ea5183b13d746d55da41e268323ac7e5c78cb4b994dddab715043cb2fe5cedc5.png" style="max-width:100%;"></a>.</p>
+<blockquote>
+<p>"OOps" says Pam.. "Jim, Dwight's name is spelled wrong".</p>
+</blockquote>
+<p>Jim is frustrated but he is determined to fix it and push the release today itself.</p>
+<p>Jim creates a bugfix branch from <code>release/0.x</code>-&gt; <code>bugfix/j-123</code></p>
+<p><code>git checkout -b bugfix/crap-spell</code></p>
+<p>He corrects "Dwgiht" to "Dwight" in Hello.java</p>
+<p>Builds it <code>gradle clean build</code></p>
+<p>version# -  <code>0.1.0-rc.1.dev.0.uncommitted-d40eaf0</code></p>
+<p>He commits the changes and runs the build:</p>
+<pre><code>git add &amp;&amp; git commit -m "spell fix" &amp;&amp; git push &amp;&amp; gradle clean build`
+</code></pre>
+<p>This time the version# is <code>0.1.0-rc.1.dev.1-20aadcb</code></p>
+<h3>
+<a id="user-content-merge-the-fix-back" class="anchor" href="#merge-the-fix-back" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Merge the fix back</h3>
+<p>Jim merges <code>bugfix/crap-spell</code> branch to <code>release/0.x</code></p>
+<pre><code>git checkout release/0.x
+git merge bugfix/crap-spell
+</code></pre>
+<p>He creates a new release candidate</p>
+<p><code>gradle candidate publish</code></p>
+<p>new RC version <code>0.1.0-rc.2</code>  got generated and jar got uploaded to maven-releases repo in artifactory (publish)</p>
+<pre><code>maven-releases
+    com/dunder-mifflin/hello
+        0.1.0-rc.1
+            ver-demo-0.1.0-rc.1.jar
+        0.1.0-rc.2
+            ver-demo-0.1.0-rc.2.jar  &lt;== Release candidate 2 (fix for spell error)
+</code></pre>
+<hr>
+<p><a href="https://camo.githubusercontent.com/058e38bfae07efa1fb0c66f2ea0dbecc8e366c88/687474703a2f2f7364666f6f646d656e752e636f6d2f77702d636f6e74656e742f706c7567696e732f66756c6c2d73637265656e2d6d6f727068696e672d7365617263682f6173736574732f696d672f7461672e706e67" target="_blank"><img src="https://camo.githubusercontent.com/058e38bfae07efa1fb0c66f2ea0dbecc8e366c88/687474703a2f2f7364666f6f646d656e752e636f6d2f77702d636f6e74656e742f706c7567696e732f66756c6c2d73637265656e2d6d6f727068696e672d7365617263682f6173736574732f696d672f7461672e706e67" alt="" data-canonical-src="http://sdfoodmenu.com/wp-content/plugins/full-screen-morphing-search/assets/img/tag.png" style="max-width:100%;"></a> <strong>He notices that the git repository has now a tag created (<code>v0.1.0-rc.2</code>)</strong></p>
+<hr>
+<blockquote>
+<p>"Pam, check it out now.."</p>
+</blockquote>
+<p>Pam verifies and gives him thumbs up. "Looking good Jim" <a href="https://camo.githubusercontent.com/d08dc29b9db7549d6e829af67ecb555e7fd38ca9/68747470733a2f2f7777772e6372797374616c6b6e6f77732e636f6d2f6173736574732f686f6d65322f6865616473686f74732f50616d2d656135313833623133643734366435356461343165323638333233616337653563373863623462393934646464616237313530343363623266653563656463352e706e67" target="_blank"><img src="https://camo.githubusercontent.com/d08dc29b9db7549d6e829af67ecb555e7fd38ca9/68747470733a2f2f7777772e6372797374616c6b6e6f77732e636f6d2f6173736574732f686f6d65322f6865616473686f74732f50616d2d656135313833623133643734366435356461343165323638333233616337653563373863623462393934646464616237313530343363623266653563656463352e706e67" alt="" title="Pam approves" data-canonical-src="https://www.crystalknows.com/assets/home2/headshots/Pam-ea5183b13d746d55da41e268323ac7e5c78cb4b994dddab715043cb2fe5cedc5.png" style="max-width:100%;"></a></p>
+<h3>
+<a id="user-content-released-finally" class="anchor" href="#released-finally" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Released (finally)</h3>
+<p>Jim makes the release final</p>
+<p><code>gradle final publish</code></p>
+<p>That creates the version <code>0.1.0</code> and uploads the jar to artifactory</p>
+<pre><code>maven-releases
+    com/dunder-mifflin/hello
+        0.1.0
+            ver-demo-0.1.0.jar          &lt;=== RELEASE JAR
+        0.1.0-rc.1
+            ver-demo-0.1.0-rc.1.jar
+        0.1.0-rc.2
+            ver-demo-0.1.0-rc.2.jar
+</code></pre>
+<hr>
+<p><a href="https://camo.githubusercontent.com/058e38bfae07efa1fb0c66f2ea0dbecc8e366c88/687474703a2f2f7364666f6f646d656e752e636f6d2f77702d636f6e74656e742f706c7567696e732f66756c6c2d73637265656e2d6d6f727068696e672d7365617263682f6173736574732f696d672f7461672e706e67" target="_blank"><img src="https://camo.githubusercontent.com/058e38bfae07efa1fb0c66f2ea0dbecc8e366c88/687474703a2f2f7364666f6f646d656e752e636f6d2f77702d636f6e74656e742f706c7567696e732f66756c6c2d73637265656e2d6d6f727068696e672d7365617263682f6173736574732f696d672f7461672e706e67" alt="" data-canonical-src="http://sdfoodmenu.com/wp-content/plugins/full-screen-morphing-search/assets/img/tag.png" style="max-width:100%;"></a> <strong>He notices that the git repository has now a tag created (<code>v0.1.0</code>)</strong></p>
+<hr>
+<p>He proceeds with the deployment and Dundler mifflin Hello app now says "Hello...Dwight is the worst!"</p>
+<h3>
+<a id="user-content-merge" class="anchor" href="#merge" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Merge</h3>
+<p>As a responsible guy, Jim syncs up the changes to both master and develop branches</p>
+<pre><code>git checkout master
+git merge release/0.x
+git checkout develop
+git merge release/0.x
+</code></pre>
+<p>Next day, Dwight was in for a major surpise when he started Hello app.</p>
+<p><a href="https://camo.githubusercontent.com/85e05d338b8ca9982044ce1e4112a6208571b898/68747470733a2f2f36382e6d656469612e74756d626c722e636f6d2f6176617461725f3838393965366661653736395f3132382e706e67" target="_blank"><img src="https://camo.githubusercontent.com/85e05d338b8ca9982044ce1e4112a6208571b898/68747470733a2f2f36382e6d656469612e74756d626c722e636f6d2f6176617461725f3838393965366661653736395f3132382e706e67" alt="" data-canonical-src="https://68.media.tumblr.com/avatar_8899e6fae769_128.png" style="max-width:100%;"></a> <em>"Hello...Dwight is the worst!"</em></p>
+<h3>
+<a id="user-content-now-dwight-wants-to-prank" class="anchor" href="#now-dwight-wants-to-prank" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Now, Dwight wants to prank..</h3>
+<p><a href="https://camo.githubusercontent.com/4c8b8439302b9614a5f2b53b7469ae0edb915fc1/68747470733a2f2f7777772e6372797374616c6b6e6f77732e636f6d2f6173736574732f686f6d65322f6865616473686f74732f4477696768742d623664303435626266613562376232626466396265393235333935316163306232643733373531656234343038396366356333303539326631343437646239332e706e67" target="_blank"><img src="https://camo.githubusercontent.com/4c8b8439302b9614a5f2b53b7469ae0edb915fc1/68747470733a2f2f7777772e6372797374616c6b6e6f77732e636f6d2f6173736574732f686f6d65322f6865616473686f74732f4477696768742d623664303435626266613562376232626466396265393235333935316163306232643733373531656234343038396366356333303539326631343437646239332e706e67" alt="" title="Dwight" data-canonical-src="https://www.crystalknows.com/assets/home2/headshots/Dwight-b6d045bbfa5b7b2bdf9be9253951ac0b2d73751eb44089cf5c30592f1447db93.png" style="max-width:100%;"></a> Dwight decides to change "Dwight is the worst" to  "_____" (a real solid prank. shhh..)</p>
+<p>He creates a new feature branch</p>
+<pre><code>git checkout -b feature/kill-jim
+</code></pre>
+<p>Does a build <code>gradle clean build</code></p>
+<p>version # shows up as <code>0.2.0-dev.0-develop.20aadcb</code></p>
+<hr>
+<p>He notices the version number has been automatically upgraded to <strong>0.2.0 as 0.1.0 has already been released. Anything from now on is &gt; 0.1.0</strong></p>
+<hr>
+<p>The story continues.. (but hope you got the point)</p>
+<h2>
+<a id="user-content-keep-in-mind" class="anchor" href="#keep-in-mind" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Keep in mind</h2>
+<p>The tasks:</p>
+<ul>
+<li>snapshot : Generates the snapshots but doesn't create tag in repository</li>
+<li>candidate : Generates the release candidates and creates tag in repository (v$ver-rc.#)</li>
+<li>final : Generates the final version and creates tag in repository (v$ver)</li>
+</ul>
+<hr>
+<p>Typically,</p>
+<ul>
+<li>
+<code>snapshot</code> is done on <code>develop</code> branch</li>
+<li>
+<code>candidate</code> and <code>final</code> are done on <code>release</code> branches
+<ul>
+<li>can be done on <code>bugfix</code> branch for hotfixes</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>Version# bump:</p>
+<ul>
+<li>on release/1.x branch, after every release, the version number increases as v1.<em>x+1</em>.0</li>
+<li>on release/32.1.x branch, after every release, the version number increases as v32.1.<em>x+1</em>
+</li>
+<li>major, minor or patch numbers can be bumped up manually also
+<ul>
+<li>(gradle release plugin <sup id="user-content-a1"><a href="#f1">1</a></sup> does it this way <code>gradle &lt;snapshot|candidate|release&gt; -Prelease.scope=&lt;major|minor|patch&gt;</code> )</li>
+</ul>
+</li>
+</ul>
+<hr>
+<div class="highlight highlight-source-java"><pre><span class="pl-k">@author</span><span class="pl-k">:</span> vyas</pre></div>
+<p><b id="user-content-f1">1</b> <a href="https://github.com/nebula-plugins/nebula-release-plugin">Netflix Gradle release plugin</a> <a href="#a1">↩</a></p>
+</article></body></html>

@@ -259,6 +259,8 @@ The story continues.. (but hope you got the point)
 
 ## Keep in mind
 
+The tasks:
+
 - snapshot : Generates the snapshots but doesn't create tag in repository
 - candidate : Generates the release candidates and creates tag in repository (v$ver-rc.#)
 - final : Generates the final version and creates tag in repository (v$ver)
@@ -271,9 +273,16 @@ Typically,
     + can be done on `bugfix` branch for hotfixes
 ---
 
+Version# bump:
+
 - on release/1.x branch, after every release, the version number increases as v1._x+1_.0
-- on release/2.1.x branch, after every release, the version number increases as v2.1._x+1_
+- on release/32.1.x branch, after every release, the version number increases as v32.1._x+1_
 - major, minor or patch numbers can be bumped up manually also 
-    - (gradle plugin does it this way `gradle <snapshot|candidate|release> -Prelease.scope=<major|minor|patch>`)
+    - (gradle release plugin <sup id="a1">[1](#f1)</sup> does it this way `gradle <snapshot|candidate|release> -Prelease.scope=<major|minor|patch>` )
 
 ---
+```java
+@author: vyas
+```
+
+<b id="f1">1</b> [Netflix Gradle release plugin](https://github.com/nebula-plugins/nebula-release-plugin) [↩](#a1)
