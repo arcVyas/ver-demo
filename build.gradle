@@ -8,6 +8,7 @@ apply plugin: 'idea'
 apply plugin: 'maven-publish'
 apply plugin: 'maven'
 
+project.buildDir='target'
 
 repositories {
     mavenCentral()
@@ -50,7 +51,7 @@ task wrapper(type: Wrapper) {
     gradleVersion = '3.1'
 }
 
-tasks.release.finalizedBy tasks.publish
+//tasks.release.finalizedBy tasks.publish
 
 test {
     ignoreFailures = true
