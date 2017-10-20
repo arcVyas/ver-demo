@@ -1,0 +1,50 @@
+userInput.task = snapshot | candidate | final
+userInput.scope= major | minor | patch | null
+userInput.useLastVersion
+
+branch = getBranch() ( branch.type, branch.name)
+version = getVersion(branchType)
+
+
+function getVersion(branch, task){
+  latestTag = getLatestTagFromGit()
+  version.major = latestTag.major
+  version.minor = latestTag.minor
+  version.patch = latestTag.patch
+  version.rc = latestTag.rc
+  if(majorBump)
+    version.major = latestTag.major+1
+  if(minorBump)
+    version.minor = latestTag.minor+1
+  if(patchBump)
+    version.patch = latestTag.patch+1
+
+  switch branchType
+    case "MASTER":
+      version.minor = version.minor++
+      version.patch = 0
+    case "DEVELOP":
+      version.minor = version.minor++
+      version.patch = 0
+      version.suffix = "-SNAPSHOT"
+    case "FEATURE/BUGFIX":
+      version.minor = version.minor++
+      version.patch = 0
+      version.suffix = "-feature_"+branch.name
+    case "RELEASE":
+      version.minor = version.minor++
+      version.patch = 0
+      if(task=="candidate")
+        version.suffix="-rc."+version.rc+1
+    case "HOTFIX":
+      version.patch = version.patch++
+
+}
+
+function getLatestTagFromGit(){
+  
+}
+
+function tag(version){
+  
+}
