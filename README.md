@@ -22,6 +22,8 @@ Additional labels for pre-release and build metadata are available as extensions
 
 [Refer GitFlow](http://jeffkreeftmeijer.com/images/gitflow.gif)
 
+Note: There is another branch type - support. This is not covered in git flow, but quite useful when you need to maintain multipe major releases
+
 ## Versioning Tasks
 
 - snapshot : Generates the snapshots
